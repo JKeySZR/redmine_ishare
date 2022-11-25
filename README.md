@@ -23,7 +23,7 @@ With an easter egg in the form of a change of Ava with each download. Refresh th
 
 ![iShare просмотр issue по паролю.](doc/screenshots/password_igi_action.gif "Просмотр задачи, по паролю, с пасхалкой")
 
-Как это выглядит внутри Redmine  
+How it looks inside Redmine
 
 ![iShare создание достпу по паролю.](doc/screenshots/issue_create_password_access.gif "Как разрешить доступ к задаче по паролю.")
 
@@ -55,9 +55,51 @@ Further information about plugin installation can be found at: https://www.redmi
 
 ## Usage
 
-To use the iShare functionality you need to
+What the plugin currently does:
 
-* add the custom field 'owner-email' to a project in the project configuration
+Functionality out of the box
+
+`/issues/:id` Example: /ishare/555
+
+When accessing which, access rights to the task are checked, and whether authentication is required
+basically.
+
+По аналогии для `доступа` по `паролю` сделан путь вида
+
+`/ishare/:id`   Example:  /ishare/555
+
+By analogy, for `access` by `password`, a path of the form
+
+![iShare form input password.](doc/screenshots/01.ishare_password_form_page.png "To view the task, you must enter a password")
+
+
+### Creating Access
+
+In order to create access by password, you need to::
+- select the desired issue
+- In sidebar press Shared anonym 
+- ![](doc/screenshots/02.ishare_create_password.png)
+- The form for creating access will open.
+
+![](doc/screenshots/ishare_form_create_access.png)
+
+A table of existing accesses is displayed at the top. which contains the following information:
+
+First column:
+
+- Access creation time
+- Who created the access (clickable link to the user)
+- How long will this password be valid for?
+
+Second column
+- The password itself is 10 characters
+
+Third column
+- Comment. Brief note. For example, for what/whom the access was granted
+
+For convenience, when opening the form, a random password is automatically generated so as not to suffer
+the throes of a "creative password".
+But if you wish, you can specify your own, in a simpler way, for example 123445 =)
 
 ## Compatibility
 
