@@ -1,0 +1,7 @@
+# English strings go here for Rails i18n
+ru:
+  ishare_label_module: 'iShared доступ по паролю'
+  label_ishare: "iShare"
+  label_ishare_new: 'Доступы по паролю'
+  label_granted: "Выданные доступы"
+  ishare_title_create: 'Создать новый досту по паролю'

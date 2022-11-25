@@ -1,0 +1,88 @@
+<% ishare_prepare %>
+
+<h3 class="title"><%= l(:ishare_title_create)%></h3>
+<div id="ishare-list-modal">
+  <%= form_tag({}, :method => :get, :remote => true, :method => :post, :id => 'new-ishare-form') do %>
+
+    <% if !@ishare[:items].blank? %>
+      <div class="table-wrapper">
+        <div class="table">
+          <div class="table-caption"><%= l(:label_granted)%></div>
+          <div class="table-thead">
+            <div class="table-tr">
+              <div class="table-th">
+                <%= check_box_tag 'check_all', '', false, :class => 'toggle-selection',
+                                  :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}" %>
+              </div>
+              <div class="table-th"><%= l(:field_created_on)%></div>
+              <div class="table-th"><%= l(:field_password)%></div>
+              <div class="table-th"><%= l(:label_comment)%></div>
+
+            </div>
+          </div>
+
+          <% @ishare[:items].each do |ishare| %>
+
+            <div class="table-tbody">
+
+              <div class="table-tr <%= "ish-status-expired" if @ishare[:expired].key?(ishare.id) %>">
+                <div class="table-th"><%= check_box_tag("ishare_ids[]", ishare.id, false, :id => nil) %></div>
+                <div class="table-td">
+                  <span class="elm_created"> <%= format_time(ishare.created_on) %></span><br>
+                  <span class="elm_user"> <%= link_to_user User.find(ishare.user_id) %></span><br>
+                  <span class="elm_expired"> <%= format_time(ishare.expired) %></span>
+                </div>
+                <div class="table-td"><%= ishare.password %></div>
+                <div class="table-td"><%= ishare.note %></div>
+
+              </div>
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+
+    <div class="flex-wrapper">
+      <div class="flex-container">
+        <div class="row">
+
+          <div class="flex-item">
+            <%= label_tag('ishare[pass]',  l(:field_password)) %>
+            <%= text_field_tag "ishare[pass]", nil, maxlength: 10, placeholder: "Password", class: "ip-pass ispl-item-password" %>
+          </div>
+
+          <div class="flex-item">
+            <%= label_tag('ishare[experied]', l(:field_due_date)) %>
+            <div class="ispl-item-expired_to">
+              <%= date_field_tag 'ishare[experied][date]', nil, :size => 10, :no_label => true %>
+              <%= time_field_tag 'ishare[experied][time]', nil, :size => 6 %>
+            </div>
+          </div>
+
+          <div class="flex-item">
+            <%= label_tag('ishare[note]', l(:label_comment)) %>
+            <%= text_field_tag "ishare[note]", nil, :placeholder => 'Input note..', :class => 'ispl-item-note' %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <p><%= check_all_links 'ishare-list-modal' %></p>
+
+    <p class="buttons">
+      <%= submit_tag l(:button_add), :name => 'add', :onclick => "hideModal(this);" %>
+      <%= submit_tag l(:button_delete), :name => 'delete', :onclick => "hideModal(this);", data: { confirm: "Are you sure?" } %>
+      <%= link_to_function l(:button_cancel), "hideModal(this);" %>
+    </p>
+
+  <% end %>
+</div>
+
+<%= javascript_tag do %>
+  var randomstring = Math.random().toString(36).slice(-10);
+  $("#ishare_pass").val(randomstring);
+
+<% end %>
+

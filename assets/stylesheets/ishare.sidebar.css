@@ -1,0 +1,258 @@
+fieldset.collapsed .ishare-passwords{
+    display: none;
+}
+
+.ishare-passwords-list li  {
+    list-style-type: none;
+}
+
+.ispl-item-li{
+    /*display: flex;*/
+}
+
+.ispl-item {
+    /*float: left;*/
+}
+
+.isi-input{
+    color: #6c71c4;
+}
+
+.ispl-item-expired_to {
+    color: red;
+    margin-top: -32px;
+    right: 34px;
+    position: absolute;
+    display: block;
+}
+
+.flex-wrapper{
+    display: block;
+    height: 150px;
+    display: block;
+}
+
+.table-wrapper{
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: revert;
+}
+
+
+#ishare_experied_date {
+    width: 125px;
+}
+
+#ishare_experied_time{
+    width: 85px;
+}
+
+
+.elm_created{
+    color:#4F4F4F;
+}
+
+.elm_expired {
+    color: yellowgreen;
+}
+
+.ish-status-expired {
+    background-color: #7575755e;
+}
+
+.ish-status-expired .elm_expired {
+    color: red;
+}
+
+input.ispl-item-password {
+    text-align: center;
+}
+
+input.ispl-item-password,
+input.ispl-item-note{
+    color: #6c71c4;
+    margin-top: -4px;
+    right: 34px;
+    position: absolute;
+}
+
+.flex-container-vertical {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item-vertical {
+    background-color: tomato;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.flex-container-horizont {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flex-item-horizont {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+
+.flex-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.row {
+    width: auto;
+    /*border: 1px solid blue;*/
+    min-width: 354px;
+}
+
+.flex-item {
+    background-color: #62264d;
+    padding: 5px;
+    /*width: 20px;*/
+    height: 30px;
+    margin: 10px;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    display: block;
+    /*text-align: center;*/
+    text-align: left;
+}
+
+.flex-container input {
+    height: 38px;
+}
+
+
+.icon-button__badge {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    /*height: 50px;*/
+    color: #333333;
+    /*background: #d7a6ff;*/
+    border: none;
+    outline: none;
+    /*border-radius: 50% !important;*/
+    /*border-radius: 50% ;*/
+}
+
+.icon-button:hover {
+    cursor: pointer;
+}
+
+.icon-button:active {
+    background: #cccccc;
+}
+
+/* Tables styless */
+
+.table {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    /*border: 1px solid #555;*/
+    empty-cells: show;
+}
+.table-caption {
+    display: table-caption;
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+}
+.table-colgroup {
+    display: table-column-group;
+}
+.table-col {
+    display: table-column;
+}
+.table-thead {
+    display: table-header-group;
+}
+.table-tbody {
+    display: table-row-group;
+    font-size: 12px;
+}
+.table-tfoot {
+    display: table-footer-group;
+}
+.table-tr {
+    display: table-row;
+    border-bottom-color: #c290ff;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.table-th {
+    display: table-cell;
+    padding: 10px;
+    /*border: 1px solid #555;*/
+    font-weight: bold;
+    text-align: left;
+}
+.table-td {
+    display: table-cell;
+    padding: 10px;
+    /*border: 1px solid #555;*/
+}
+.table-thead .table-th, .table-thead .table-td {
+    background: #f9f9f9;
+}
+.table-tbody .table-th, .table-tbody .table-td {
+    /*background: #fff;*/
+}
+.table-tfoot .table-th, .table-tfoot .table-td {
+    background: #f4f6ff;
+}

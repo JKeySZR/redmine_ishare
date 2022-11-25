@@ -1,0 +1,6 @@
+$('#ajax-modal').html(
+  '<%= escape_javascript(
+         render(:partial => 'ishare/new')
+       ) %>');
+showModal('ajax-modal', '400px');
+$('#ajax-modal').addClass('new-ishare');
