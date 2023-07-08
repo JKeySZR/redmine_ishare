@@ -3,6 +3,7 @@
 <%
   # @todo хз как сделать правильно , чтобы сайд бар не отображался если не залогинен. не через шаблон
   return if !User.current.logged?;
+  return if (params[:controller] != 'issues')
   return if (params[:controller] == 'issues' && params[:action] == 'index')
 
   ishare_prepare
